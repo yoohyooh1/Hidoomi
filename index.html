@@ -15,30 +15,74 @@
             color: red;
             transition: background-image 1s ease; /* تأخير التحول بين الخلفيات */
         }
+
         /* تكبير حجم الصورة */
         #image {
-            width: 400px; /* تغيير الحجم ليكون أكبر */
-            height: 400px;
+            width: 50%; /* تغيير الحجم ليكون متناسب مع الشاشات المختلفة */
+            max-width: 400px; /* تحديد الحد الأقصى للعرض */
+            height: auto; /* الحفاظ على النسب */
             margin-top: 20px;
         }
+
         /* تنسيق الأزرار */
         button {
-            width: 170px;
-            height: 70px;
+            width: 60%;
+            max-width: 250px;
+            height: 50px;
             font-size: 18px;
             margin: 10px;
             cursor: pointer;
+            padding: 10px;
         }
+
         #green-btn {
             background-color: green;
             color: white;
         }
+
         #red-btn {
             background-color: red;
             color: white;
         }
+
         p {
             font-size: 32px;
+        }
+
+        /* استجابة لأحجام الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            p {
+                font-size: 24px;
+            }
+
+            button {
+                font-size: 16px;
+                width: 80%;
+                height: 45px;
+            }
+
+            #image {
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+
+        /* استجابة لشاشات الهواتف المحمولة الصغيرة */
+        @media (max-width: 480px) {
+            p {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 14px;
+                width: 90%;
+                height: 40px;
+            }
+
+            #image {
+                width: 100%;
+                max-width: 250px;
+            }
         }
     </style>
 </head>
@@ -60,7 +104,7 @@
             redBtnClicks++;
 
             if (redBtnClicks === 1) {
-                redBtn.innerText = " لوء ( افا ليههه!! )";
+                redBtn.innerText = "لوء ( افا ليههه!! )";
                 greenBtn.style.width = "220px";
                 greenBtn.style.height = "90px";
                 greenBtn.innerText = "طعم (يبي ليه)";
@@ -95,3 +139,4 @@
     </script>
 </body>
 </html>
+
